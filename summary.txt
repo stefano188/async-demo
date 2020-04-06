@@ -1,0 +1,28 @@
+
+# callback.js
+# Sample of javascript callback function
+# findUser, findRepositories, displayCommits are named function passed as arguments callback
+
+getUser(1, findUser);
+
+function getUser(id, callback) {
+    ....
+}
+
+function findUser(user) {
+    ...
+}
+
+********************************************************
+promise.js, index.js
+
+# Sample of promise
+
+resolve(..): resolve the promise and 'then' method can be called to perform some actions
+reject(..): reject the promise and 'catch' method can be called to log some errors and perform some actions
+
+
+********************************************************
+promise-api.js
+
+# Sample of static promise useful for unit test.
