@@ -1,9 +1,13 @@
 
 async function displayCommits() {
-    const user = await getUser(1);
-    const repos = await getRepositorie(user.gitHubUsername);
-    const commits = await getCommits(repos);
-    console.log('user commits', commits);
+    try {
+        const user = await getUser(1);
+        const repos = await getRepositorie(user.gitHubUsername);
+        const commits = await getCommits(repos);
+        console.log('user commits', commits);
+    } catch (err) {
+        console.log(err.message);
+    }
 }
 displayCommits();
 
@@ -21,6 +25,7 @@ function getRepositorie(username) {
         setTimeout(() => {
             console.log('Reading repositories from user', username);
             resolve(['repo1','repo2']);
+            // reject(new Error('cannot read repos'));
         }, 2000);
     });
 }
